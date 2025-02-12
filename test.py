@@ -69,27 +69,3 @@ def play_game():
 
 if __name__ == "__main__":
     play_game()
-
-
-# 필요한 라이브러리 임포트
-from git import Repo
-import os
-
-# 저장소 경로 설정
-repo_path = 'path/to/robot-python'  # 로컬 저장소 경로로 변경하세요
-
-# 저장소 열기
-repo = Repo(repo_path)
-
-# 변경된 모든 파일 스테이징
-repo.git.add('--all')
-
-# 커밋 메시지 작성
-commit_message = "수정 사항을 반영합니다."  # 원하는 커밋 메시지로 변경하세요
-repo.index.commit(commit_message)
-
-# 원격 저장소 가져오기
-origin = repo.remote(name='origin')
-
-# 변경 사항 푸시
-origin.push()
